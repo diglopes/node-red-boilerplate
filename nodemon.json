@@ -6,5 +6,8 @@
     ],
     "ignore": [
         "./lib/flows"
-    ]
+    ],
+    "events": {
+        "start": "cls || clear"
+    }
 }
