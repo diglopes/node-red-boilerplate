@@ -1,1 +1,0 @@
-[{"id":"4843a0f1.9aa5d","type":"tab","label":"Flow 1","disabled":false,"info":""},{"id":"ac64a0a8.9ca2f","type":"discord-token","name":"TESTE"},{"id":"677dbe9.6bd994","type":"discordClient","z":"4843a0f1.9aa5d","name":"","token":"ac64a0a8.9ca2f","x":460,"y":180,"wires":[[]]}]

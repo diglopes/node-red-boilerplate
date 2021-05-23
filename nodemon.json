@@ -1,8 +1,10 @@
 {
     "watch": [
         "./config",
-        "./src",
+        "./lib",
         ".env.dev"
     ],
-    "verbose": true
+    "ignore": [
+        "./lib/flows"
+    ]
 }

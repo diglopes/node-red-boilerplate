@@ -66,7 +66,8 @@ console.log(process.env.NODE_ENV);
     //debugUseColors: true,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    flowFile: 'flows.json',
+    flowFile: 'lib/flows/flows.json',
+    credentialFile: 'lib/flows/flows_cred.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
@@ -78,7 +79,7 @@ console.log(process.env.NODE_ENV);
     // Note: once you set this property, do not change it - doing so will prevent
     // node-red from being able to decrypt your existing credentials and they will be
     // lost.
-    credentialSecret: process.env.CREDENTIAL_SECRET,
+    credentialSecret: false,
 
     // By default, all user data is stored in a directory called `.node-red` under
     // the user's home directory. To use a different location, the following

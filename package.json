@@ -2,10 +2,10 @@
   "name": "node-red-boilerplate",
   "version": "1.0.0",
   "description": "A boilerplate for production ready Node-RED applications",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "NODE_ENV=production node src/index.js",
-    "dev": "nodemon src/index.js --config= nodemon.json"
+    "start": "NODE_ENV=production node lib/index.js",
+    "dev": "nodemon lib/index.js --config= nodemon.json"
   },
   "repository": {
     "type": "git",
