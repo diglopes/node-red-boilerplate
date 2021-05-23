@@ -1,0 +1,8 @@
+{
+    "watch": [
+        "./config",
+        "./src",
+        ".env.dev"
+    ],
+    "verbose": true
+}

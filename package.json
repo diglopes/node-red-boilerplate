@@ -1,0 +1,35 @@
+{
+  "name": "node-red-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for production ready Node-RED applications",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "nodemon src/index.js --config= nodemon.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diglopes/node-red-boilerplate.git"
+  },
+  "keywords": [
+    "node-red",
+    "boilerplate",
+    "node",
+    "javascript",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diglopes/node-red-boilerplate/issues"
+  },
+  "homepage": "https://github.com/diglopes/node-red-boilerplate#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "node-red": "^1.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
