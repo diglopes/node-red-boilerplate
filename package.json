@@ -25,12 +25,14 @@
   },
   "homepage": "https://github.com/diglopes/node-red-boilerplate#readme",
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "node-red": "^1.3.5",
-    "swagger-ui-express": "^4.1.6"
+    "dotenv": "10.0.0",
+    "express": "4.17.1",
+    "node-red": "2.0.5",
+    "swagger-ui-express": "4.1.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "2.0.7",
+    "node-red-debugger": "1.1.1",
+    "nrlint": "1.0.2"
   }
 }
