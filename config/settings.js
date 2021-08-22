@@ -42,7 +42,7 @@ module.exports = {
    * node-red from being able to decrypt your existing credentials and they will be
    * lost.
    */
-  //credentialSecret: "a-secret-key",
+  credentialSecret: false,
 
   /** By default, the flow JSON will be formatted over multiple lines making
    * it easier to compare changes when using version control.
