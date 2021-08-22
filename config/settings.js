@@ -362,7 +362,7 @@ module.exports = {
          * for the full list, see https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandaloneeditorconstructionoptions.html
          */
         fontSize: 14,
-        fontFamily: "Fira Code",
+        fontFamily: "default",
         fontLigatures: true,
         minimap: {
           enabled: false,
