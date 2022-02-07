@@ -18,7 +18,7 @@
     "javascript",
     "express"
   ],
-  "author": "",
+  "author": "Diego Lopes",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/diglopes/node-red-boilerplate/issues"
@@ -30,12 +30,12 @@
   "dependencies": {
     "dotenv": "10.0.0",
     "express": "4.17.1",
-    "node-red": "2.0.5",
-    "swagger-ui-express": "4.1.6"
+    "node-red": "2.2.0",
+    "swagger-ui-express": "4.3.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.7",
     "node-red-debugger": "1.1.1",
+    "nodemon": "2.0.7",
     "nrlint": "1.0.2"
   }
 }
