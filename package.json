@@ -1,7 +1,7 @@
 {
-  "name": "node-red-boilerplate",
-  "version": "2.1.0",
-  "description": "A boilerplate for production ready Node-RED applications",
+  "name": "rocketchat-watson-bot",
+  "version": "0.1.0",
+  "description": "Aplicação em Node-RED para criar bots no Rocketchat integrados com o Watson Assistant",
   "main": "lib/index.js",
   "scripts": {
     "start": "NODE_ENV=production node lib/index.js",
@@ -13,13 +13,11 @@
   },
   "keywords": [
     "node-red",
-    "boilerplate",
-    "node",
-    "javascript",
-    "express"
+    "watson",
+    "chatbot"
   ],
   "author": "Diego Lopes",
-  "license": "ISC",
+  "license": "UNLINCENSED",
   "bugs": {
     "url": "https://github.com/diglopes/node-red-boilerplate/issues"
   },
