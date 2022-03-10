@@ -1,0 +1,9 @@
+{
+    "name" : "node-red-rocketchat",
+    "node-red" : {
+        "nodes": {
+            "rocketchatReceiver": "rocketchatReceiver.js",
+            "rocketchatConfig": "rocketchatConfig.js"
+        }
+    }
+}
