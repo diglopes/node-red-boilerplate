@@ -2,6 +2,8 @@
     "watch": [
         "./config",
         "./lib",
+        ".env.dev",
+        "./nodes",
         ".env.dev"
     ],
     "ext" : "html,js,json",
