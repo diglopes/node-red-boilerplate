@@ -1,1 +1,8 @@
-{}
+{
+    "4f348a0445c87ade": {
+        "apikey": "${WATSON_API_KEY}"
+    },
+    "4d8de3d96db20ab4": {
+        "botPassword": "${ROCKETCHAT_BOT_PASSWORD}"
+    }
+}

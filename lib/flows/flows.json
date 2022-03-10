@@ -7,59 +7,39 @@
         "info": ""
     },
     {
-        "id": "cf6ba580.d136e8",
-        "type": "http in",
+        "id": "4d8de3d96db20ab4",
+        "type": "rocketchatConfig",
+        "instanceHost": "${ROCKETCHAT_INSTANCE_HOST}",
+        "botUsername": "${ROCKETCHAT_BOT_USERNAME}",
+        "botName": "${ROCKETCHAT_BOT_NAME}",
+        "hasSSL": true
+    },
+    {
+        "id": "cd21989db5b32bbd",
+        "type": "rocketchatReceiver",
         "z": "9ab91bb2.9ce5d8",
         "name": "",
-        "url": "/hello",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 180,
-        "y": 200,
+        "bot": "4d8de3d96db20ab4",
+        "x": 130,
+        "y": 260,
         "wires": [
             [
-                "60a66926.ec01b8"
+                "296545d08529309b"
             ]
         ]
     },
     {
-        "id": "af5b81a5.e0df8",
-        "type": "http response",
-        "z": "9ab91bb2.9ce5d8",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 450,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "60a66926.ec01b8",
+        "id": "296545d08529309b",
         "type": "change",
         "z": "9ab91bb2.9ce5d8",
-        "name": "response",
+        "name": "addSessionId",
         "rules": [
             {
                 "t": "set",
-                "p": "payload.running",
+                "p": "params.session_id",
                 "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            },
-            {
-                "t": "set",
-                "p": "payload.timestamp",
-                "pt": "msg",
-                "to": "$now()",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload.port",
-                "pt": "msg",
-                "to": "PORT",
-                "tot": "env"
+                "to": "sender.username",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -68,11 +48,116 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 200,
+        "y": 260,
         "wires": [
             [
-                "af5b81a5.e0df8"
+                "4f348a0445c87ade"
             ]
         ]
+    },
+    {
+        "id": "4f348a0445c87ade",
+        "type": "watson-assistant-v2",
+        "z": "9ab91bb2.9ce5d8",
+        "name": "",
+        "service-endpoint": "${WATSON_SERVICE_ENDPOINT}",
+        "assistant_id": "${WATSON_ASSISTANT_ID}",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "c2cbafe791b73355"
+            ]
+        ]
+    },
+    {
+        "id": "41740a4c9e3865c0",
+        "type": "split",
+        "z": "9ab91bb2.9ce5d8",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "70cb351cc08c093a"
+            ]
+        ]
+    },
+    {
+        "id": "70cb351cc08c093a",
+        "type": "change",
+        "z": "9ab91bb2.9ce5d8",
+        "name": "moveTextToPayload",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.text",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "fe1a8925ea08aab6"
+            ]
+        ]
+    },
+    {
+        "id": "c2cbafe791b73355",
+        "type": "change",
+        "z": "9ab91bb2.9ce5d8",
+        "name": "moveGenericToPayload",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.output.generic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 260,
+        "wires": [
+            [
+                "41740a4c9e3865c0"
+            ]
+        ]
+    },
+    {
+        "id": "fe1a8925ea08aab6",
+        "type": "rocketchatSender",
+        "z": "9ab91bb2.9ce5d8",
+        "name": "",
+        "x": 670,
+        "y": 320,
+        "wires": []
     }
 ]

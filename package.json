@@ -30,6 +30,7 @@
     "dotenv": "10.0.0",
     "express": "4.17.1",
     "node-red": "2.2.0",
+    "node-red-node-watson": "~0.9.5",
     "swagger-ui-express": "4.3.0"
   },
   "devDependencies": {

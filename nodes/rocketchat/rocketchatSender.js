@@ -8,7 +8,7 @@ module.exports = function(RED) {
         const node = this
 
         node.on("input", msg => {
-            const { payload, topic: { roomId }} = msg
+            const { payload, topic: { roomId } } = msg
             driver.sendToRoomId(payload, roomId)
         })
     }
