@@ -2,7 +2,6 @@ const red = require("node-red");
 
 module.exports = function(RED) {
     const { driver } = require('@rocket.chat/sdk');
-    let botId
 
     function RocketChatReceiverNode(config) {
         RED.nodes.createNode(this, config);
@@ -18,7 +17,7 @@ module.exports = function(RED) {
             node.status({ fill: "green", shape: "dot", text: "connected" })
             return driver.login({ username: botUsername, password: botPassword });
         })
-        .then(id => botId = id)
+        .then(function(id){this.botId = id}.bind(node))
         .then(() => driver.subscribeToMessages())
         .then(() => {
             driver.reactToMessages(sendMessagesOnFlow.bind(node))
@@ -30,8 +29,8 @@ module.exports = function(RED) {
 
     async function sendMessagesOnFlow (err, message, messageOptions) {
         if (!err) {
-            const { _id: senderId } = message
-            if (senderId === botId) return;
+            const { u: { _id: senderId } } = message
+            if (senderId === this.botId) return;
             const flowMessage = createFlowMessageFromRocketchatMessage(message)
             this.send(flowMessage)
         }
