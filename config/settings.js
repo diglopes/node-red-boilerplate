@@ -36,7 +36,7 @@ module.exports = {
    ******************************************************************************/
 
   /** The file containing the flows. If not set, defaults to flows_<hostname>.json **/
-  flowFile: path.join(nrRoot, "src", "red", "flows.json"),
+  flowFile: path.join(nrRoot, "lib", "flows", "flows.json"),
 
   /** By default, credentials are encrypted in storage using a generated key. To
    * specify your own secret, set the following property.
@@ -62,7 +62,7 @@ module.exports = {
   /** Node-RED scans the `nodes` directory in the userDir to find local node files.
    * The following property can be used to specify an additional directory to scan.
    */
-  nodesDir: path.join(nrRoot, "src", "red", "nodes"),
+  nodesDir: path.join(nrRoot, "lib", "nodes"),
 
   /*******************************************************************************
    * Security
@@ -490,7 +490,7 @@ module.exports = {
   //},
 
   swagger: {
-    enabled: true,
+    enabled: false,
   },
   nrlint: require("../.nrlintrc.js"),
 };

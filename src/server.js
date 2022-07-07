@@ -23,6 +23,8 @@ if (settings.swagger.enabled) {
     }, swaggerUI.serve, swaggerUI.setup())
 }
 
+
+
 const server = http.createServer(app)
 RED.init(server, settings)
 app.use(settings.httpAdminRoot, RED.httpAdmin)

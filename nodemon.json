@@ -1,12 +1,10 @@
 {
     "watch": [
         "./config",
-        "./lib",
         ".env.dev",
-        "./nodes",
-        ".env.dev"
+        "./lib/nodes"
     ],
-    "ext" : "html,js,json",
+    "ext": "html,js,json",
     "ignore": [
         "./lib/flows"
     ],
