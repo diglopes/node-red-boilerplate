@@ -20,7 +20,10 @@
  *
  **/
 
+const path = require("path");
+
 const isProd = process.env.NODE_ENV === "production";
+const nrRoot = process.env.NODE_RED_HOME
 
 module.exports = {
   /*******************************************************************************
@@ -33,7 +36,7 @@ module.exports = {
    ******************************************************************************/
 
   /** The file containing the flows. If not set, defaults to flows_<hostname>.json **/
-  flowFile: "lib/flows/flows.json",
+  flowFile: path.join(nrRoot, "src", "red", "flows.json"),
 
   /** By default, credentials are encrypted in storage using a generated key. To
    * specify your own secret, set the following property.
@@ -54,12 +57,12 @@ module.exports = {
    * the user's home directory. To use a different location, the following
    * property can be used
    */
-  userDir: "./",
+  userDir: nrRoot,
 
   /** Node-RED scans the `nodes` directory in the userDir to find local node files.
    * The following property can be used to specify an additional directory to scan.
    */
-  nodesDir: "./nodes",
+  nodesDir: path.join(nrRoot, "src", "red", "nodes"),
 
   /*******************************************************************************
    * Security
@@ -485,5 +488,9 @@ module.exports = {
   //    *   - reason: if result is false, the HTTP reason string to return
   //    */
   //},
+
+  swagger: {
+    enabled: true,
+  },
   nrlint: require("../.nrlintrc.js"),
 };
